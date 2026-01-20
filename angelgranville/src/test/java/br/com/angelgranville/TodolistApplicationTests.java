@@ -27,7 +27,7 @@ class TodolistApplicationTests {
 
 	@Test
 	void testCreateSuccess() {
-		var toDo = new ToDo("ToDo 1", "Teste de sucesso", false, 2);
+		var toDo = new ToDo("ToDo 1", "Teste de sucesso", false, 10);
 
 		webTestClient.post().uri("/create")
 				.bodyValue(toDo)
@@ -43,7 +43,7 @@ class TodolistApplicationTests {
 
 	@Test
 	void testCreateFailure(){
-		var toDo = new ToDo("", "", false, 0);
+		var toDo = new ToDo("", "", false, 100);
 
 		webTestClient.post().uri("/create")
 				.bodyValue(toDo)

@@ -1,6 +1,8 @@
 package br.com.angelgranville.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -17,6 +19,8 @@ public class ToDo {
     @NotBlank
     private String descricao;
     private boolean realizado;
+    @Min(0)
+    @Max(10)
     private int prioridade;
 
     public ToDo(String nome, String descricao, boolean realizado, int prioridade){
