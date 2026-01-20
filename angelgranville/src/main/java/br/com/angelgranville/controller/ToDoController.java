@@ -2,6 +2,7 @@ package br.com.angelgranville.controller;
 
 import br.com.angelgranville.entity.ToDo;
 import br.com.angelgranville.service.ToDoService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class ToDoController {
     }
 
     @PostMapping("/create")
-    List<ToDo> create(@RequestBody ToDo toDo){
+    List<ToDo> create(@RequestBody @Valid ToDo toDo){
        return toDoService.create(toDo);
     }
 
